@@ -19,7 +19,7 @@ fi
 # If linux, install packages with apt
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     echo "Installing packages with apt"
-    sudo apt install -y \
+    apt update && apt install -y \
         curl \
         wget \
         git \
