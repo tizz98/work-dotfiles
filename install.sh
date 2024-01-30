@@ -1,25 +1,39 @@
 #!/usr/bin/env bash
 
+if ! command -v brew &> /dev/null
+then
+    echo "Installing brew"
+    export NONINTERACTIVE=1
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+
+if ! command -v chezmoi &> /dev/null
+then
+    echo "Installing chezmoi"
+    brew install chezmoi
+fi
+
 echo "Installing dotfiles with chezmoi"
-sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply tizz98/work-dotfiles
+chezmoi init --apply tizz98/work-dotfiles
 
 if ! command -v fzf &> /dev/null
 then
     echo "Installing fzf"
-    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-    ~/.fzf/install
+    brew install fzf
+    $(brew --prefix)/opt/fzf/install
 fi
 
 if ! command -v starship &> /dev/null
 then
     echo "Installing starship terminal"
-    sh -c "$(curl -fsLS https://starship.rs/install.sh)" -- --yes
+    brew install starship
 fi
 
 # If linux, install packages with apt
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     echo "Installing packages with apt"
     apt update && apt install -y \
+	build-essential \
         curl \
         wget \
         git \
