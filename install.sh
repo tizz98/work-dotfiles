@@ -40,5 +40,6 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
         git \
         htop \
         jq \
-        ripgrep
+        ripgrep \
+        vim
 fi
