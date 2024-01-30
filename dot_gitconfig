@@ -1,0 +1,8 @@
+[user]
+	signingkey = EBAE4CC2908FA7A2
+	name = Eli Wilson
+	email = eli@runwayml.com
+[commit]
+	gpgsign = true
+[init]
+	defaultBranch = main
