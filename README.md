@@ -21,7 +21,8 @@ sh -c "$(curl -fsLS get.chezmoi.io)"
 ## New machine setup
 
 ```bash
-./install.sh
+sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply tizz98/work-dotfiles
+./$HOME/install.sh
 ```
 
 ## First time setup
