@@ -43,3 +43,18 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
         ripgrep \
         vim
 fi
+
+if command -v code &> /dev/null
+    EXTENSIONS=(
+        "ms-python.python"
+        "github.copilot"
+        "charliermarsh.ruff"
+        "ms-kubernetes-tools.vscode-kubernetes-tools"
+        "hashicorp.terraform"
+    )
+
+    echo "Installing ${#EXTENSIONS[@]} vscode extensions"
+    for extension in "${EXTENSIONS[@]}"; do
+        code --install-extension $extension
+    done
+fi
