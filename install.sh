@@ -44,7 +44,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
         vim
 fi
 
-if command -v code &> /dev/null
+if command -v code &> /dev/null; then
     EXTENSIONS=(
         "ms-python.python"
         "github.copilot"
