@@ -6,6 +6,5 @@ source ~/.aliases
 export EDITOR=vim
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
