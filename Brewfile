@@ -1,3 +1,5 @@
+tap "withgraphite/tap"
+
 brew "chezmoi"
 brew "fzf"
 brew "starship"
