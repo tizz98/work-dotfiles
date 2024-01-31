@@ -9,6 +9,7 @@ brew "htop"
 brew "jq"
 brew "ripgrep"
 brew "vim"
+brew "withgraphite/tap/graphite"
 
 vscode "ms-python.python"
 vscode "github.copilot"
