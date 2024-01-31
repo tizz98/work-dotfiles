@@ -8,3 +8,4 @@ eval "$(starship init bash)"
 source ~/.aliases
 
 export EDITOR=vim
+export PATH="/usr/local/aws-cli/v2/current/bin:$PATH"
